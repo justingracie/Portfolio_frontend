@@ -4,6 +4,7 @@ function Projects(props) {
     //create a stat to hold projects
     const [projects, setProjects] = useState(null);
     //function to make an API call
+useEffect(() => {
     const getProjectsData = async () => {
         //make api call and get a response
         const response = await fetch(props.URL + "projects");
@@ -11,8 +12,8 @@ function Projects(props) {
         //set projects state to the data
         setProjects(data);
     };
+    getProjectsData()} , [props.URL]);
     //make and initial call for the data inside of useEffect, only to happen one time
-    useEffect(() => getProjectsData(), []);
     //define a function that will return the JSX needed once we get the data
     const loaded = () => {
         //add a key?
