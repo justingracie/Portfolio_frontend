@@ -20,7 +20,7 @@ useEffect(() => {
         return projects.map((project, idx) => (
             <div key={idx}>
                 <h1>{project.name}</h1>
-                <img src={project.image} />
+                <img src={project.image} alt={project.name} />
                 <a href={project.git}>
                     <button>Github</button>
                 </a>
