@@ -17,8 +17,8 @@ useEffect(() => {
     //define a function that will return the JSX needed once we get the data
     const loaded = () => {
         //add a key?
-        return projects.map((project) => (
-            <div>
+        return projects.map((project, idx) => (
+            <div key={idx}>
                 <h1>{project.name}</h1>
                 <img src={project.image} />
                 <a href={project.git}>
